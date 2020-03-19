@@ -1,0 +1,119 @@
+-  # 登陆数据(0)
+ baseurl: https://www.scrm365.cn
+-  # 登陆账号接口地址(1)
+ url: /api/auth_center/v3/login
+ account: 13679012985
+ password: Jn123000
+-   # 联系人列表(2)
+ url: /api/scrm/contacts
+ contact_list : [
+#            'uncontact_start',  # 未联系时间
+#            'uncontact_end',  # 未联系截止时间
+#           'uncontact_time',  # 未联系时间段
+            'system_grade_level',  # 系统评级0,1,2,3,4,5
+            'tag_ids',  # 标签
+            'state_id',  # 国家
+            'is_worktime',  # 是否工作时间，1是，2否
+            'salesman',  # 跟进人
+            'keywords',  # 关键词查询
+            'sort_system_grade_level',  # 按系统评级排序。 desc降序，asc升序
+            'sort_recent_action_time',  # 按最近动态时间排序 desc降序，asc升序
+            'sort_recent_contact_time',  # 按最近联系时间排序 desc降序，asc升序
+            'life_cycle',  # 生命周期 1 新建客户 2潜在客户 3新成交客户 4返单客户 5衰退客户
+            'first_letter',  # 首字母排序 desc降序，asc升序
+            'type',  # 1表示 我 的 2表示共享给我的 3表示我共享的 4表示xx的联系人
+            'group_id',  # 跟进人分组
+            'search_source'  # 来源
+        ]
+-   # 导入联系人、客户解析(3)
+ url: /api/scrm/importAnalysis
+-  # 导入联系人、客户数据（4）
+ url1: /api/scrm/importData  # 客户数据
+ url2: /api/scrm/importContactData  #联系人数据
+-  # 获取客户列表（5）
+ url: /api/scrm/customers
+-  # 新增联系人同时绑定已有客户（6）
+ url: /api/scrm/contactAdd
+ data: {
+   "email": '',
+   "mobile": '',
+   "phone": "",
+   "first_name": "ydd",
+   "last_name": "yy",
+   "position": "四川",
+   "customer_id": "43427",
+   "life_cycle": 3,  # 3
+   "salesman": 100058471,  # 0
+   "sex": 1,  # 1
+   "state_id": 2,  # 2
+   "grade_level": "1",
+   "tag_id": 2737,
+   "age": 0,  # 0
+   "city": "成都",
+   "address": "地址",
+   "postcode": "610000",
+   "whatsapp": "222",
+   "skype": "2",
+   "facebook": "222",
+   "facebook_friends": "2",
+   "twitter": 222"",
+   "twitter_friends": "2",
+   "linkedin": "222",
+   "source": "2"
+ }
+- # 自定义联系人表头（7）
+ url1: /api/scrm/setShowFields   # 修改表头
+ url2: /api/scrm/getExcelFields  # 获取表头
+ fields: [{"index":1,"value":"","title":"基本信息",
+           "list":[{"value":"img_id","title":"头像","is_show":1,"line":1,"disabled":true,"checked":true},
+                   {"value":"first_name","title":"名","is_show":1,"line":3,"disabled":true,"checked":true},
+                   {"value":"last_name","title":"姓","is_show":1,"line":2,"disabled":true,"checked":true},
+                   {"value":"position","title":"职位","is_show":1,"line":4,"disabled":true,"checked":true},
+                   {"value":"customer_id","title":"所属客户","is_show":1,"line":5,"disabled":true,"checked":true}],
+           "is_show":1,"line":1},
+          {"index":2,"value":"","title":"联系方式",
+           "list":[{"value":"email","title":"邮箱","is_show":1,"line":1,"disabled":true,"checked":true},
+                   {"value":"phone","title":"电话","is_show":1,"line":2,"disabled":true,"checked":true},
+                   {"value":"mobile","title":"手机","is_show":1,"line":3,"disabled":true,"checked":true}],
+           "is_show":1,"line":2},{"index":3,"value":"state_id","title":"国家","is_show":1,"line":3},
+          {"index":4,"value":"system_grade_level","title":"系统评级","list":[],"is_show":1,"line":4},
+          {"index":5,"value":"tag_ids","title":"标签","list":[],"is_show":1,"line":5},
+          {"index":6,"value":"life_cycle","title":"生命周期","list":[],"is_show":1,"line":6},
+          {"index":7,"value":"recent_action","title":"最新动态","list":[],"is_show":1,"line":7},
+          {"index":8,"value":"recent_contact","title":"最近联系","list":[],"is_show":1,"line":8},
+          {"index":9,"value":"salesman","title":"跟进人","list":[],"is_show":1,"line":9},
+          {"index":10,"value":"group_id","title":"联系人分组","list":[],"is_show":1,"line":10},
+          {"index":11,"value":"sex","title":"性别","list":[],"is_show":0,"line":11},
+          {"index":12,"value":"grade_level","title":"我的评级","list":[],"is_show":0,"line":12},
+          {"index":13,"value":"state_area","title":"区域","list":[],"is_show":0,"line":13},
+          {"index":14,"value":"birth_day","title":"生日","list":[],"is_show":0,"line":14},
+          {"index":15,"value":"city","title":"城市","list":[],"is_show":0,"line":15},
+          {"index":16,"value":"address","title":"街道地址","list":[],"is_show":0,"line":16},
+          {"index":17,"value":"postcode","title":"邮编","list":[],"is_show":0,"line":17},
+          {"index":18,"value":"whatsapp","title":"WhatsApp","list":[],"is_show":0,"line":18},
+          {"index":19,"value":"skype","title":"Skype","list":[],"is_show":0,"line":19},
+          {"index":20,"value":"facebook","title":"Facebook","list":[],"is_show":0,"line":20},
+          {"index":21,"value":"facebook_friends","title":"Facebook好友数","list":[],"is_show":0,"line":21},
+          {"index":22,"value":"twitter","title":"Twitter","list":[],"is_show":0,"line":22},
+          {"index":23,"value":"twitter_friends","title":"Twitter关注数","list":[],"is_show":0,"line":23},
+          {"index":24,"value":"linkedin","title":"Linkedin","list":[],"is_show":0,"line":24},
+          {"index":25,"value":"create_time","title":"创建日期","list":[],"is_show":0,"line":25},
+          {"index":26,"value":"source","title":"来源","list":[],"is_show":0,"line":26},
+          {"index":27,"value":"last_update_time","title":"最后更新日期","list":[],"is_show":0,"line":27},
+          {"index":28,"value":"assigns_time","title":"分配日期","list":[],"is_show":0,"line":28},
+          {"index":29,"value":"trans_cus_time","title":"转化日期","list":[],"is_show":0,"line":29},
+          {"index":30,"value":"trans_cus_days","title":"转化天数","list":[],"is_show":0,"line":30},
+          {"index":31,"value":"utc","title":"时区","list":[],"is_show":0,"line":31},
+          {"index":32,"value":"time","title":"当地时间","list":[],"is_show":0,"line":32},
+          {"index":33,"value":"website_visit_pages","title":"网站访问页面数","list":[],"is_show":0,"line":33},
+          {"index":34,"value":"website_visits","title":"网站访问次数","list":[],"is_show":0,"line":34},
+          {"index":35,"value":"website_first_visit_time","title":"网站首次访问时间","list":[],"is_show":0,"line":35},
+          {"index":36,"value":"website_last_visit_time","title":"网站最后访问时间","list":[],"is_show":0,"line":36},
+          {"index":37,"value":"website_visit_source","title":"网站访问来源","list":[],"is_show":1,"line":37},
+          {"index":38,"value":"religion","title":"宗教信仰","list":[],"is_show":0,"line":38},
+          {"index":39,"value":"food_taboo","title":"饮食禁忌","list":[],"is_show":0,"line":39}]
+- #  合并联系人（8）
+ url: /api/scrm/contactMerge
+- #  共享联系人（9）
+ url1: /api/scrm/getSharesContacts
+ url2: /api/scrm/contactShare
